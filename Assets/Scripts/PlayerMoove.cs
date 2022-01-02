@@ -7,6 +7,7 @@ public class PlayerMoove : MonoBehaviour
     public Transform playerCam;
     public Transform objectToThrow;
     public bool isGrounded;
+    public AudioSource fireSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,7 @@ public class PlayerMoove : MonoBehaviour
             Transform obj = GameObject.Instantiate<Transform>(objectToThrow);
             obj.position = playerCam.position + playerCam.forward*0.5f;
             obj.GetComponent<Rigidbody>().AddForce(playerCam.forward * 20, ForceMode.Impulse);
+            fireSound.Play();
         }
     }
 

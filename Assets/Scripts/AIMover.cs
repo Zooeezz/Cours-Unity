@@ -14,6 +14,7 @@ public class AIMover : MonoBehaviour
     public float life = 100;
     Animator anim;
     KillCount killCountScript;
+    AudioSource deathSound;
 
     // Start is called before the first frame update
     public void Start()
@@ -22,6 +23,7 @@ public class AIMover : MonoBehaviour
         player = goPlayer.transform;
         anim = GetComponent<Animator>();
         killCountScript = GameObject.Find("GameManager").GetComponent<KillCount>();
+        deathSound = GameObject.Find("EnemyDeathSound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class AIMover : MonoBehaviour
         if (life <= 0)
         {
             killCountScript.killCount += 1;
+            deathSound.Play();
             Destroy(gameObject);
         }
 

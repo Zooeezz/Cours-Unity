@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SceneStarterScript : MonoBehaviour
 {
@@ -18,5 +19,11 @@ public class SceneStarterScript : MonoBehaviour
     void Update()
     {
         finalKillCount.text = kCS.killCountConverted.ToString();
+
+        if(Input.GetButtonDown("Fire1"))
+        {
+            Application.Quit();
+        }
+
     }
 }

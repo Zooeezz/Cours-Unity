@@ -1432,6 +1432,7 @@ MonoBehaviour:
   angularSpeed: 1
   dirPlayer: {x: 0, y: 0, z: 0}
   life: 100
+  deathSound: {fileID: 0}
 --- !u!1 &2181392768787344335
 GameObject:
   m_ObjectHideFlags: 0

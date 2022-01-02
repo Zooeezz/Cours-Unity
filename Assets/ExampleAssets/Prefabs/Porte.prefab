@@ -268,8 +268,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd7b4cb571f3b34ca03b51cca11d255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabAI: {fileID: 5219398773921977021, guid: be47659d2be247a4193680a56abfbc86, type: 3}
   spawnPoint: {fileID: 6593261177135231224}
+  vagues:
+  - nbSpawn: 3
+    prefabSpawn: {fileID: 0}
+  - nbSpawn: 5
+    prefabSpawn: {fileID: 0}
+  - nbSpawn: 6
+    prefabSpawn: {fileID: 0}
+  - nbSpawn: 8
+    prefabSpawn: {fileID: 0}
+  timeNextSpawn: 1
+  timeNextVague: 15
   time: 0
   timeMax: 1
 --- !u!1 &6593261177946294101
