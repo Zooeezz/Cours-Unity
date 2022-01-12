@@ -5,18 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class GameStarter : MonoBehaviour
 {
+    string currentScene;
+    KillCount kCS;
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentScene = "None";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        currentScene = SceneManager.GetActiveScene().name;
+
+        if (Input.GetButtonDown("Fire1") && currentScene == "Menu")
         {
-            SceneManager.LoadScene("SampleScene");
+            LoadGameScene();
         }
+    }
+
+    public void LoadGameScene()
+    {
+        SceneManager.LoadScene("SampleScene");
+        kCS.killCount = 0;
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("GameOverScene");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Exitting game...");
     }
 }

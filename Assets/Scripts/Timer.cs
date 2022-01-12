@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -18,12 +19,12 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        if (timeLeft < 0)
+        if(SceneManager.GetActiveScene().name=="SampleScene")
         {
-            Debug.Log("Time out !");
+            timeLeft -= Time.deltaTime;
+            timeLeftConverted = (int)timeLeft;
+            timerText.text = timeLeftConverted.ToString();
         }
-        timeLeftConverted = (int)timeLeft;
-        timerText.text = timeLeftConverted.ToString();
+
     }
 }

@@ -13,17 +13,13 @@ public class SceneStarterScript : MonoBehaviour
     {
         finalKillCount = GameObject.Find("EnemiesKilledCount").GetComponent<UnityEngine.UI.Text>();
         kCS = GameObject.Find("GameManager").GetComponent<KillCount>();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         finalKillCount.text = kCS.killCountConverted.ToString();
-
-        if(Input.GetButtonDown("Fire1"))
-        {
-            Application.Quit();
-        }
-
     }
 }
